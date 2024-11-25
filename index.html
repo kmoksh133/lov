@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script&display=swap" rel="stylesheet">
+    <style>
+        /* Body and General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fefefe;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+            animation: fadeInPage 1s ease-out;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        @keyframes fadeInPage {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, rgba(255, 174, 187, 0.8), rgba(255, 255, 255, 0.8));
+            padding: 20px;
+            border-bottom: 2px solid #ff7e79;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #ff5e57;
+            font-family: 'Great Vibes', cursive;
+            margin: 0;
+        }
+
+        /* Heart Floating Animation */
+        .heart {
+            position: absolute;
+            color: #ff7e79;
+            font-size: 2em;
+            animation: floatHeart 5s infinite;
+        }
+
+        @keyframes floatHeart {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-50px); opacity: 0.5; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Floating hearts */
+        .heart1 { left: 10%; animation-duration: 6s; animation-delay: 0s; }
+        .heart2 { left: 30%; animation-duration: 7s; animation-delay: 2s; }
+        .heart3 { left: 50%; animation-duration: 8s; animation-delay: 4s; }
+        .heart4 { left: 70%; animation-duration: 6s; animation-delay: 1s; }
+        .heart5 { left: 90%; animation-duration: 5s; animation-delay: 3s; }
+
+        /* Quote Section */
+        .quotes {
+            padding: 20px;
+            margin-top: 50px;
+            color: #f59fff;
+            font-size: 1.4em;
+            font-family: 'Dancing Script', cursive;
+            animation: fadeIn 3s ease-in-out;
+            line-height: 1.6;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Note Section */
+        #note {
+            padding: 20px;
+            margin: 20px auto;
+            background: lavender;
+            border-radius: 10px;
+            max-width: 600px;
+            color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .note-container button {
+            padding: 15px 30px;
+            background: royalblue;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .note-container button:hover {
+            background: #4e6a8e;
+            transform: scale(1.1);
+        }
+
+        /* Crack Screen Effect */
+        .crack-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgb(178, 178, 255); /* Start with a white background */
+            display: none;
+            z-index: 1000;
+            overflow: hidden;
+            transition: background-color 4s ease-in-out; /* Smooth background transition */
+        }
+
+        .crack-left, .crack-right {
+            position: absolute;
+            top: 0;
+            width: 50vw;
+            height: 100%;
+            background: rgb(17, 17, 24);
+            transition: transform 1s ease-in-out;
+        }
+
+        .crack-left {
+            left: 0;
+            transform: translateX(-100%);
+        }
+
+        .crack-right {
+            right: 0;
+            transform: translateX(100%);
+        }
+
+        .crack-container.open {
+            background-color: rgb(75, 135, 255); /* Transition to black background */
+        }
+
+        .crack-container.open .crack-left {
+            transform: translateX(0);
+        }
+
+        .crack-container.open .crack-right {
+            transform: translateX(0);
+        }
+
+        /* Centered Quote */
+        .quote-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            color: #ff5e57;
+            text-align: center;
+            z-index: 1500;
+            opacity: 0;
+            transition: opacity 1s ease-in-out; /* Smooth fade-in */
+        }
+
+        .crack-container.open .quote-center {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: #6a11cb;
+            font-size: 1em;
+            color: #fff;
+            border-top: 2px solid #ff7e79;
+        }
+
+        /* Enabling Scroll */
+        .content {
+            min-height: 100vh;
+            padding-bottom: 100px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>For My girl 💖</h1>
+    </header>
+
+    <!-- Floating Hearts -->
+    <div class="heart heart1">❤️</div>
+    <div class="heart heart2">💖</div>
+    <div class="heart heart3">💘</div>
+    <div class="heart heart4">💝</div>
+    <div class="heart heart5">💞</div>
+
+    <main class="content">
+        <section id="note">
+            <h2>Love Notes</h2>
+            <div class="note-container">
+                <p>Click the button below to experience something magical!</p>
+                <button onclick="crackScreen()">Crack The Screen!</button>
+            </div>
+        </section>
+
+        <section class="quotes">
+            <p>"You are my sunshine on a cloudy day!"</p>
+            <p>"I love it when i see you smile, its like glitters in the sky"</p>
+            <p>"hey girl i just fucking love you "</p>
+            <p>"You make my heart skip a beat."</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Created with love by Yo daddy💋</p>
+    </footer>
+
+    <!-- Crack Screen Animation -->
+    <div class="crack-container" id="crack-container">
+        <div class="crack-left"></div>
+        <div class="crack-right"></div>
+        <div class="quote-center" id="quote-center"> " I just love that i got to call you mine"</div>
+    </div>
+
+    <script>
+        // Crack screen function
+        function crackScreen() {
+            const crackContainer = document.getElementById("crack-container");
+            const quoteCenter = document.getElementById("quote-center");
+
+            // Show the crack container and trigger animations
+            crackContainer.style.display = "block";
+            setTimeout(() => {
+                crackContainer.classList.add("open");
+                quoteCenter.style.opacity = "1"; // Make the quote appear in the center
+            }, 100);
+        }
+    </script>
+</body>
+</html>
